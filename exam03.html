@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP1005 Fundamentals of Programming - Exam 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .exam-header {
+            background: linear-gradient(135deg, #e53e3e 0%, #2d3748 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .question-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #e53e3e;
+        }
+        .question-number {
+            background: #e53e3e;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #fed7d7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .marks {
+            background: #c6f6d5;
+            color: #22543d;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 600;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-header">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-2">COMP1005 Fundamentals of Programming</h1>
+            <p class="text-xl text-center opacity-90">Examination Paper 3 - Object-Oriented Programming</p>
+            <div class="flex justify-center mt-4">
+                <div class="bg-white bg-opacity-20 px-6 py-2 rounded-full">
+                    <span class="font-semibold">Total Marks: 120</span> | <span class="font-semibold">Duration: 2 Hours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6">
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-info-circle text-yellow-400 text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-yellow-700">
+                        <strong>Instructions:</strong> Attempt all questions. Write your answers on the exam paper. Use the back of pages if needed. This is a CLOSED BOOK examination.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 1: Classes and Objects -->
+        <div class="question-section">
+            <div class="question-number">QUESTION ONE</div>
+            <div class="marks">35 marks</div>
+            <h3 class="text-xl font-bold mb-4">Classes and Objects</h3>
+            
+            <div class="mb-6">
+                <p class="mb-4">Design a Student class for a university management system.</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Class Definition (12 marks)</h4>
+                    <p class="mb-3">Create a Student class with the following specifications:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Instance variables: name (string), student_id (integer), gpa (float), courses (list)</li>
+                        <li>Constructor method <code>__init__</code> to initialize all variables</li>
+                        <li>Method <code>__str__</code> to return a formatted string representation</li>
+                        <li>Method <code>add_course(course_code)</code> to add a course to the student's schedule</li>
+                        <li>Method <code>get_classification()</code> to return grade classification based on GPA</li>
+                    </ul>
+                    <p><strong>Write the complete Student class definition:</strong></p>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Object Creation and Usage (10 marks)</h4>
+                    <p class="mb-3">Create and test Student objects:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Create three Student objects with different data</li>
+                        <li>Add at least two courses to each student</li>
+                        <li>Print each student's information using the <code>__str__</code> method</li>
+                        <li>Print each student's grade classification</li>
+                        <li>Store all students in a list and iterate through them</li>
+                    </ul>
+                    <p><strong>Sample student data:</strong></p>
+                    <div class="code-block">
+Student 1: Alice Smith, ID: 123456, GPA: 3.8
+Student 2: Bob Johnson, ID: 234567, GPA: 3.2
+Student 3: Charlie Brown, ID: 345678, GPA: 3.9
+                    </div>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Class Methods and Properties (13 marks)</h4>
+                    <p class="mb-3">Enhance the Student class with additional functionality:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Method <code>update_gpa(new_gpa)</code> with validation (0.0-4.0)</li>
+                        <li>Method <code>drop_course(course_code)</code> to remove a course</li>
+                        <li>Class method <code>get_honor_students(students_list)</code> to return students with GPA ≥ 3.5</li>
+                        <li>Property <code>course_count</code> to return the number of enrolled courses</li>
+                        <li>Method <code>get_academic_status()</code> to return "Full-time" (≥4 courses) or "Part-time" (&lt;4 courses)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2: Inheritance -->
+        <div class="question-section">
+            <div class="question-number">QUESTION TWO</div>
+            <div class="marks">30 marks</div>
+            <h3 class="text-xl font-bold mb-4">Inheritance and Polymorphism</h3>
+            
+            <div class="mb-6">
+                <div class="bg-orange-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Inheritance Hierarchy (15 marks)</h4>
+                    <p class="mb-3">Create an inheritance hierarchy for university personnel:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Base class <code>Person</code> with name, id, email attributes</li>
+                        <li>Derived class <code>Student</code> (from Person) with gpa, courses attributes</li>
+                        <li>Derived class <code>Instructor</code> (from Person) with department, salary attributes</li>
+                        <li>Derived class <code>Staff</code> (from Person) with position, office attributes</li>
+                        <li>Each class should have appropriate <code>__init__</code> and <code>__str__</code> methods</li>
+                    </ul>
+                    <p><strong>Include proper constructor chaining using super()</strong></p>
+                </div>
+
+                <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Method Overriding (8 marks)</h4>
+                    <p class="mb-3">Implement method overriding in the inheritance hierarchy:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Base class method <code>get_role()</code> that returns "Person"</li>
+                        <li>Override <code>get_role()</code> in each derived class to return appropriate role</li>
+                        <li>Base class method <code>get_details()</code> that returns basic info</li>
+                        <li>Override <code>get_details()</code> in derived classes to include specific attributes</li>
+                    </ul>
+                    <p><strong>Demonstrate polymorphism by calling these methods on different object types</strong></p>
+                </div>
+
+                <div class="bg-teal-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Polymorphism in Action (7 marks)</h4>
+                    <p class="mb-3">Create a polymorphic demonstration:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Create a list containing different types of Person objects</li>
+                        <li>Iterate through the list and call <code>get_role()</code> on each object</li>
+                        <li>Iterate through the list and call <code>get_details()</code> on each object</li>
+                        <li>Demonstrate that the correct method is called based on the actual object type</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3: Exception Handling -->
+        <div class="question-section">
+            <div class="question-number">QUESTION THREE</div>
+            <div class="marks">28 marks</div>
+            <h3 class="text-xl font-bold mb-4">Exception Handling in Classes</h3>
+            
+            <div class="mb-6">
+                <div class="bg-red-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Custom Exceptions (14 marks)</h4>
+                    <p class="mb-3">Create custom exceptions for the Student class:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Create custom exception <code>InvalidGPAError</code> for invalid GPA values</li>
+                        <li>Create custom exception <code>CourseNotFoundError</code> for trying to drop non-existent courses</li>
+                        <li>Create custom exception <code>StudentNotFoundError</code> for searching operations</li>
+                        <li>Modify the Student class to raise these exceptions appropriately</li>
+                        <li>Include proper exception handling in your main program</li>
+                    </ul>
+                    <p><strong>Example usage:</strong></p>
+                    <div class="code-block">
+try:
+    student.update_gpa(5.0)  # Invalid GPA
+except InvalidGPAError as e:
+    print(f"Error: {e}")
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Robust Input Handling (8 marks)</h4>
+                    <p class="mb-3">Create a robust student data entry system:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Function to safely create Student objects from user input</li>
+                        <li>Validate student ID format (must be 6-8 digits)</li>
+                        <li>Validate GPA range (0.0-4.0)</li>
+                        <li>Validate email format (contains @ and .)</li>
+                        <li>Use try-except blocks to handle invalid input gracefully</li>
+                    </ul>
+                    <p><strong>Allow user to retry after errors</strong></p>
+                </div>
+
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Error Recovery (6 marks)</h4>
+                    <p class="mb-3">Implement error recovery mechanisms:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Function to load student data from a file with error handling</li>
+                        <li>Skip invalid records and continue processing</li>
+                        <li>Log errors to a separate file for debugging</li>
+                        <li>Provide user feedback about which records were skipped</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4: Design Patterns -->
+        <div class="question-section">
+            <div class="question-number">QUESTION FOUR</div>
+            <div class="marks">27 marks</div>
+            <h3 class="text-xl font-bold mb-4">Design Patterns and Best Practices</h3>
+            
+            <div class="mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (a) - Class Design Principles (13 marks)</h4>
+                    <p class="mb-3">Apply object-oriented design principles:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Create a <code>Course</code> class with appropriate attributes and methods</li>
+                        <li>Implement a <code>University</code> class to manage students and courses</li>
+                        <li>Design methods for enrolling students in courses</li>
+                        <li>Implement methods for generating enrollment reports</li>
+                        <li>Follow encapsulation principles (private attributes, public methods)</li>
+                    </ul>
+                    
+                    <p><strong>Consider the relationships between classes:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>A University has many Students</li>
+                        <li>A University has many Courses</li>
+                        <li>A Student can enroll in multiple Courses</li>
+                        <li>A Course can have multiple Students</li>
+                    </ul>
+                </div>
+
+                <div class="bg-cyan-50 p-4 rounded-lg mt-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Documentation and Testing (14 marks)</h4>
+                    <p class="mb-3">Create comprehensive documentation and tests:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Add docstrings to all classes and methods</li>
+                        <li>Create unit tests for key class methods</li>
+                        <li>Test normal cases, edge cases, and error conditions</li>
+                        <li>Create a simple test suite that demonstrates all functionality</li>
+                        <li>Include example usage in the documentation</li>
+                    </ul>
+
+                    <p><strong>Example test structure:</strong></p>
+                    <div class="code-block">
+def test_student_creation():
+    """Test that Student objects are created correctly"""
+    student = Student("Alice", 123456, 3.8)
+    assert student.name == "Alice"
+    assert student.get_classification() == "First Class"
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-lg mt-8">
+            <h3 class="text-xl font-bold mb-4 text-center">END OF EXAMINATION PAPER</h3>
+            <p class="text-center text-gray-600">Please ensure all questions have been attempted. Use the back of pages for additional working space if needed.</p>
+        </div>
+    </div>
+</body>
+</html>

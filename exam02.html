@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP1005 Fundamentals of Programming - Exam 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .exam-header {
+            background: linear-gradient(135deg, #38b2ac 0%, #2d3748 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .question-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #38b2ac;
+        }
+        .question-number {
+            background: #38b2ac;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #fed7d7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .marks {
+            background: #c6f6d5;
+            color: #22543d;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 600;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-header">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-2">COMP1005 Fundamentals of Programming</h1>
+            <p class="text-xl text-center opacity-90">Examination Paper 2 - Lists, Dictionaries & File Handling</p>
+            <div class="flex justify-center mt-4">
+                <div class="bg-white bg-opacity-20 px-6 py-2 rounded-full">
+                    <span class="font-semibold">Total Marks: 120</span> | <span class="font-semibold">Duration: 2 Hours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6">
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-info-circle text-yellow-400 text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-yellow-700">
+                        <strong>Instructions:</strong> Attempt all questions. Write your answers on the exam paper. Use the back of pages if needed. This is a CLOSED BOOK examination.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 1: Lists and List Operations -->
+        <div class="question-section">
+            <div class="question-number">QUESTION ONE</div>
+            <div class="marks">32 marks</div>
+            <h3 class="text-xl font-bold mb-4">Lists and List Operations</h3>
+            
+            <div class="mb-6">
+                <p class="mb-4">A library management system needs to handle book inventory and member records using lists.</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - List Creation and Access (8 marks)</h4>
+                    <p class="mb-3">Create a program to manage a book inventory system:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Create a list called <code>books</code> with 5 book titles</li>
+                        <li>Print the first and last book using indexing</li>
+                        <li>Print all books using a for loop</li>
+                        <li>Add a new book to the end of the list</li>
+                        <li>Remove the second book from the list</li>
+                    </ul>
+                    <p><strong>Write the Python code to implement this functionality:</strong></p>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - List Methods and Operations (10 marks)</h4>
+                    <p class="mb-3">Given two lists of library members:</p>
+                    <div class="code-block">
+active_members = ["Alice", "Bob", "Charlie", "Diana"]
+inactive_members = ["Eve", "Frank", "Grace"]
+                    </div>
+                    <p class="mb-3">Write code to:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Combine both lists into <code>all_members</code></li>
+                        <li>Sort the combined list alphabetically</li>
+                        <li>Find and print the index of "Charlie"</li>
+                        <li>Count how many members have names starting with 'A' or 'B'</li>
+                        <li>Create a new list with members who have names longer than 5 characters</li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - List Comprehensions (6 marks)</h4>
+                    <p class="mb-3">Use list comprehensions to process member data:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Create a list of member name lengths</li>
+                        <li>Create a list of member names in uppercase</li>
+                        <li>Create a list of members whose names contain the letter 'a'</li>
+                    </ul>
+                    <p><strong>Expected output format:</strong></p>
+                    <div class="code-block">
+Name lengths: [5, 3, 7, 5, 3, 5, 5]
+Uppercase names: ['ALICE', 'BOB', 'CHARLIE', 'DIANA', 'EVE', 'FRANK', 'GRACE']
+Names with 'a': ['Frank', 'Grace']
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2: Dictionaries -->
+        <div class="question-section">
+            <div class="question-number">QUESTION TWO</div>
+            <div class="marks">28 marks</div>
+            <h3 class="text-xl font-bold mb-4">Dictionaries and Key-Value Pairs</h3>
+            
+            <div class="mb-6">
+                <div class="bg-orange-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Dictionary Creation and Access (10 marks)</h4>
+                    <p class="mb-3">Create a student record system using dictionaries:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Create a dictionary for a student with keys: name, id, gpa, courses</li>
+                        <li>Access and print the student's name and GPA</li>
+                        <li>Add a new key 'graduation_year' with value 2025</li>
+                        <li>Update the GPA to a new value</li>
+                        <li>Remove the 'courses' key from the dictionary</li>
+                    </ul>
+                    <p><strong>Write the Python code to implement this:</strong></p>
+                </div>
+
+                <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Dictionary Methods (8 marks)</h4>
+                    <p class="mb-3">Given a dictionary of book ratings:</p>
+                    <div class="code-block">
+book_ratings = {
+    "Python Programming": 4.5,
+    "Data Structures": 4.2,
+    "Algorithms": 4.8,
+    "Web Development": 3.9,
+    "Database Design": 4.1
+}
+                    </div>
+                    <p class="mb-3">Write code to:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Print all book titles using <code>.keys()</code></li>
+                        <li>Print all ratings using <code>.values()</code></li>
+                        <li>Find the book with the highest rating</li>
+                        <li>Add a new book "Machine Learning" with rating 4.6</li>
+                        <li>Remove the book with the lowest rating</li>
+                    </ul>
+                </div>
+
+                <div class="bg-teal-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Nested Dictionaries (10 marks)</h4>
+                    <p class="mb-3">Create a nested dictionary structure for course enrollment:</p>
+                    <div class="code-block">
+course_enrollment = {
+    "COMP1005": {
+        "instructor": "Dr. Smith",
+        "students": ["Alice", "Bob", "Charlie"],
+        "schedule": "Monday 9:00 AM"
+    },
+    "MATH1010": {
+        "instructor": "Prof. Johnson",
+        "students": ["Diana", "Eve", "Frank"],
+        "schedule": "Wednesday 2:00 PM"
+    }
+}
+                    </div>
+                    <p class="mb-3">Write code to:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Access and print the instructor for COMP1005</li>
+                        <li>Add a new student "Grace" to the MATH1010 course</li>
+                        <li>Print the total number of students across all courses</li>
+                        <li>Create a list of all instructors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3: File Handling -->
+        <div class="question-section">
+            <div class="question-number">QUESTION THREE</div>
+            <div class="marks">30 marks</div>
+            <h3 class="text-xl font-bold mb-4">File Handling and Data Persistence</h3>
+            
+            <div class="mb-6">
+                <div class="bg-red-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Reading Files (12 marks)</h4>
+                    <p class="mb-3">Create a program to read student data from a file:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Open a file called "students.txt" in read mode</li>
+                        <li>Read all lines into a list</li>
+                        <li>Print each line with line numbers</li>
+                        <li>Count the total number of students</li>
+                        <li>Handle the case where the file doesn't exist</li>
+                    </ul>
+                    <p><strong>Assume the file contains one student name per line</strong></p>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Writing Files (10 marks)</h4>
+                    <p class="mb-3">Create a program to write student grades to a file:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Create a list of student dictionaries with name and grade</li>
+                        <li>Open a file called "grades.txt" in write mode</li>
+                        <li>Write each student's information in CSV format (name,grade)</li>
+                        <li>Include error handling for file operations</li>
+                        <li>Print confirmation when writing is complete</li>
+                    </ul>
+                    <p><strong>Sample output format in file:</strong></p>
+                    <div class="code-block">
+Alice,85.5
+Bob,92.0
+Charlie,78.5
+                    </div>
+                </div>
+
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - File Processing (8 marks)</h4>
+                    <p class="mb-3">Create a program to process the grades file:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Read the "grades.txt" file</li>
+                        <li>Calculate the average grade</li>
+                        <li>Find the highest and lowest grades</li>
+                        <li>Create a summary report and write it to "summary.txt"</li>
+                    </ul>
+                    <p><strong>Sample summary format:</strong></p>
+                    <div class="code-block">
+Grade Summary Report
+Total Students: 3
+Average Grade: 85.3
+Highest Grade: 92.0 (Bob)
+Lowest Grade: 78.5 (Charlie)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4: Data Processing -->
+        <div class="question-section">
+            <div class="question-number">QUESTION FOUR</div>
+            <div class="marks">30 marks</div>
+            <h3 class="text-xl font-bold mb-4">Data Processing and Analysis</h3>
+            
+            <div class="mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (a) - Data Transformation (15 marks)</h4>
+                    <p class="mb-3">Create a program to analyze student performance data:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Read student data from a CSV file with format: name,course1,course2,course3</li>
+                        <li>Calculate each student's average grade</li>
+                        <li>Determine grade classification (A, B, C, D, F) based on average</li>
+                        <li>Create a dictionary with student name as key and classification as value</li>
+                        <li>Write the results to a new file "classifications.txt"</li>
+                    </ul>
+                    
+                    <p class="mb-3"><strong>Grading scale:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>A: 90-100, B: 80-89, C: 70-79, D: 60-69, F: Below 60</li>
+                    </ul>
+
+                    <p><strong>Sample input file format:</strong></p>
+                    <div class="code-block">
+Alice,85,92,88
+Bob,78,85,82
+Charlie,92,95,90
+                    </div>
+                </div>
+
+                <div class="bg-cyan-50 p-4 rounded-lg mt-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Statistics and Reporting (15 marks)</h4>
+                    <p class="mb-3">Create a comprehensive statistics report:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Calculate class statistics (overall average, highest average, lowest average)</li>
+                        <li>Count how many students received each grade classification</li>
+                        <li>Find the student with the highest average grade</li>
+                        <li>Create a detailed report file "statistics.txt" with all findings</li>
+                        <li>Include error handling for missing or malformed data</li>
+                    </ul>
+
+                    <p><strong>Expected report format:</strong></p>
+                    <div class="code-block">
+Class Statistics Report
+======================
+Total Students: 3
+Overall Average: 87.2
+Highest Average: 92.3 (Charlie)
+Lowest Average: 81.7 (Bob)
+
+Grade Distribution:
+A: 1 student
+B: 2 students
+C: 0 students
+D: 0 students
+F: 0 students
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-lg mt-8">
+            <h3 class="text-xl font-bold mb-4 text-center">END OF EXAMINATION PAPER</h3>
+            <p class="text-center text-gray-600">Please ensure all questions have been attempted. Use the back of pages for additional working space if needed.</p>
+        </div>
+    </div>
+</body>
+</html>

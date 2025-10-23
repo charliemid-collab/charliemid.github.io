@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions - Building Reusable Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 1400px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .function-anatomy {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .anatomy-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 5px solid #4facfe;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .section-icon {
+            font-size: 1.8rem;
+            margin-right: 0.5rem;
+            color: #4facfe;
+        }
+        .code-showcase {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 2rem;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            border: 2px solid #4facfe;
+            position: relative;
+        }
+        .code-label {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #4facfe;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .function-parts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .part-box {
+            background: white;
+            border: 2px solid #4facfe;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .part-title {
+            font-weight: 700;
+            color: #4facfe;
+            margin-bottom: 0.5rem;
+        }
+        .part-desc {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .benefit-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #4facfe;
+            display: flex;
+            align-items: center;
+        }
+        .benefit-icon {
+            color: #4facfe;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-card">
+            <div class="text-center mb-6">
+                <h1 class="hero-title">Functions</h1>
+                <p class="subtitle">Building Reusable Code Blocks</p>
+            </div>
+            
+            <div class="function-anatomy">
+                <div class="anatomy-section">
+                    <div class="section-title">
+                        <div class="section-icon"><i class="fas fa-cogs"></i></div>
+                        Function Anatomy
+                    </div>
+                    
+                    <div class="function-parts">
+                        <div class="part-box">
+                            <div class="part-title">def</div>
+                            <div class="part-desc">Function definition</div>
+                        </div>
+                        <div class="part-box">
+                            <div class="part-title">Parameters</div>
+                            <div class="part-desc">Input variables</div>
+                        </div>
+                        <div class="part-box">
+                            <div class="part-title">return</div>
+                            <div class="part-desc">Output value</div>
+                        </div>
+                    </div>
+
+                    <div class="code-showcase">
+                        <div class="code-label">Complete Function</div>
+<span style="color: #68d391;"># Function definition</span>
+def calculate_gpa(grades):
+    """Calculate GPA from letter grades"""
+    <span style="color: #fbb6ce;">total_points = 0</span>
+    <span style="color: #fbb6ce;">for grade in grades:</span>
+        <span style="color: #fbb6ce;">if grade == 'A':</span>
+            <span style="color: #fbb6ce;">total_points += 4.0</span>
+        <span style="color: #fbb6ce;">elif grade == 'B':</span>
+            <span style="color: #fbb6ce;">total_points += 3.0</span>
+    <span style="color: #fbb6ce;">gpa = total_points / len(grades)</span>
+    <span style="color: #fbb6ce;">return gpa</span>
+
+<span style="color: #68d391;"># Function call</span>
+student_grades = ['A', 'B', 'A', 'A']
+result = calculate_gpa(student_grades)
+print(f"GPA: {result}")
+                    </div>
+                </div>
+
+                <div class="anatomy-section">
+                    <div class="section-title">
+                        <div class="section-icon"><i class="fas fa-star"></i></div>
+                        Function Benefits
+                    </div>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-recycle"></i></div>
+                            <div>
+                                <div class="font-semibold">Reusability</div>
+                                <div class="text-sm text-gray-600">Write once, use many times</div>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-puzzle-piece"></i></div>
+                            <div>
+                                <div class="font-semibold">Modularity</div>
+                                <div class="text-sm text-gray-600">Break complex problems into smaller parts</div>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-eye"></i></div>
+                            <div>
+                                <div class="font-semibold">Readability</div>
+                                <div class="text-sm text-gray-600">Clear, descriptive function names</div>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-tools"></i></div>
+                            <div>
+                                <div class="font-semibold">Maintainability</div>
+                                <div class="text-sm text-gray-600">Easy to update and debug</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-showcase mt-4">
+                        <div class="code-label">Function Parameters & Return</div>
+<span style="color: #68d391;"># Function with multiple parameters</span>
+def validate_student(name, student_id, gpa):
+    """Validate student information"""
+    is_valid = True
+    errors = []
+    
+    <span style="color: #fbb6ce;">if len(name) < 2:</span>
+        <span style="color: #fbb6ce;">is_valid = False</span>
+        <span style="color: #fbb6ce;">errors.append("Name too short")</span>
+    
+    <span style="color: #fbb6ce;">if not (0.0 <= gpa <= 4.0):</span>
+        <span style="color: #fbb6ce;">is_valid = False</span>
+        <span style="color: #fbb6ce;">errors.append("Invalid GPA")</span>
+    
+    <span style="color: #fbb6ce;">return is_valid, errors</span>
+
+<span style="color: #68d391;"># Multiple return values</span>
+valid, error_list = validate_student("John", 12345, 3.5)
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-gradient-to-r from-blue-100 to-cyan-100 p-4 rounded-lg">
+                <div class="text-center">
+                    <p class="text-lg font-semibold text-gray-800">
+                        <i class="fas fa-lightbulb mr-2 text-blue-600"></i>
+                        Think of functions as mini-programs within your program - they take input, process it, and return output!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

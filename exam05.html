@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP1005 Fundamentals of Programming - Exam 5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .exam-header {
+            background: linear-gradient(135deg, #805ad5 0%, #2d3748 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .question-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #805ad5;
+        }
+        .question-number {
+            background: #805ad5;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #fed7d7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .marks {
+            background: #c6f6d5;
+            color: #22543d;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 600;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-header">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-2">COMP1005 Fundamentals of Programming</h1>
+            <p class="text-xl text-center opacity-90">Examination Paper 5 - Data Analysis and Visualization</p>
+            <div class="flex justify-center mt-4">
+                <div class="bg-white bg-opacity-20 px-6 py-2 rounded-full">
+                    <span class="font-semibold">Total Marks: 120</span> | <span class="font-semibold">Duration: 2 Hours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6">
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-info-circle text-yellow-400 text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-yellow-700">
+                        <strong>Instructions:</strong> Attempt all questions. Write your answers on the exam paper. Use the back of pages if needed. This is a CLOSED BOOK examination.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 1: Data Processing -->
+        <div class="question-section">
+            <div class="question-number">QUESTION ONE</div>
+            <div class="marks">30 marks</div>
+            <h3 class="text-xl font-bold mb-4">Data Processing and Analysis</h3>
+            
+            <div class="mb-6">
+                <p class="mb-4">Process and analyze student performance data from multiple sources.</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Data Cleaning (10 marks)</h4>
+                    <p class="mb-3">Create a data cleaning pipeline for student records:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Function <code>clean_student_data(records)</code> to process raw data</li>
+                        <li>Handle missing values by imputing averages or defaults</li>
+                        <li>Validate and correct data types (GPA must be float, ID must be integer)</li>
+                        <li>Remove duplicate entries based on student ID</li>
+                        <li>Standardize text fields (names to title case, course codes to uppercase)</li>
+                    </ul>
+                    <p><strong>Sample raw data with issues:</strong></p>
+                    <div class="code-block">
+records = [
+    {"name": "alice johnson", "id": "123456", "gpa": "3.8", "courses": 5},
+    {"name": "BOB SMITH", "id": 234567, "gpa": 3.2, "courses": None},
+    {"name": "Alice Johnson", "id": "123456", "gpa": "3.8", "courses": 5}
+]
+                    </div>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Statistical Analysis (12 marks)</h4>
+                    <p class="mb-3">Perform comprehensive statistical analysis on cleaned data:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Calculate descriptive statistics: mean, median, mode, standard deviation of GPAs</li>
+                        <li>Identify outliers using interquartile range (IQR) method</li>
+                        <li>Calculate correlation between GPA and number of courses taken</li>
+                        <li>Create grade distribution histogram with appropriate bins</li>
+                        <li>Generate percentile rankings for all students</li>
+                    </ul>
+                    <p><strong>Include visualizations using matplotlib:</strong></p>
+                    <div class="code-block">
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create histogram of GPA distribution
+plt.hist(gpas, bins=10, edgecolor='black')
+plt.title('GPA Distribution')
+plt.xlabel('GPA Range')
+plt.ylabel('Number of Students')
+plt.show()
+                    </div>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Data Aggregation (8 marks)</h4>
+                    <p class="mb-3">Aggregate and summarize data for reporting:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Group students by GPA ranges and count in each group</li>
+                        <li>Calculate department-wise statistics (if department data available)</li>
+                        <li>Generate semester-wise performance trends</li>
+                        <li>Create summary tables with key metrics</li>
+                        <li>Export aggregated data to CSV format</li>
+                    </ul>
+                    <p><strong>Expected output format:</strong></p>
+                    <div class="code-block">
+GPA Range Summary:
+3.5-4.0: 15 students (30%)
+3.0-3.49: 20 students (40%)
+2.5-2.99: 12 students (24%)
+2.0-2.49: 3 students (6%)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2: Visualization -->
+        <div class="question-section">
+            <div class="question-number">QUESTION TWO</div>
+            <div class="marks">32 marks</div>
+            <h3 class="text-xl font-bold mb-4">Data Visualization</h3>
+            
+            <div class="mb-6">
+                <div class="bg-orange-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Basic Plotting (12 marks)</h4>
+                    <p class="mb-3">Create fundamental visualizations using matplotlib:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Line plot showing GPA trends over multiple semesters</li>
+                        <li>Bar chart comparing average GPA by course type</li>
+                        <li>Scatter plot showing relationship between study hours and GPA</li>
+                        <li>Pie chart showing grade distribution (A, B, C, D, F)</li>
+                        <li>Box plot showing GPA distribution by year level</li>
+                    </ul>
+                    <p><strong>Include proper labels, titles, and legends:</strong></p>
+                    <div class="code-block">
+plt.figure(figsize=(10, 6))
+plt.plot(semesters, gpa_trends, marker='o', linewidth=2)
+plt.title('GPA Trends Over Semesters')
+plt.xlabel('Semester')
+plt.ylabel('Average GPA')
+plt.grid(True, alpha=0.3)
+plt.show()
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Advanced Visualizations (10 marks)</h4>
+                    <p class="mb-3">Create advanced and interactive visualizations:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Heatmap showing correlation matrix between different variables</li>
+                        <li>Subplots comparing multiple metrics side by side</li>
+                        <li>3D scatter plot for three-dimensional data analysis</li>
+                        <li>Animated plot showing changes over time</li>
+                        <li>Interactive plot with hover information using plotly</li>
+                    </ul>
+                    <p><strong>Example correlation heatmap:</strong></p>
+                    <div class="code-block">
+import seaborn as sns
+import pandas as pd
+
+# Create correlation matrix
+corr_matrix = df.corr()
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', center=0)
+plt.title('Variable Correlation Matrix')
+plt.show()
+                    </div>
+                </div>
+
+                <div class="bg-teal-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Visualization Best Practices (10 marks)</h4>
+                    <p class="mb-3">Apply visualization best practices:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Choose appropriate chart types for different data types</li>
+                        <li>Use color effectively to highlight key insights</li>
+                        <li>Ensure accessibility with proper contrast and labeling</li>
+                        <li>Create dashboard-style layouts for comprehensive views</li>
+                        <li>Export visualizations in multiple formats (PNG, PDF, SVG)</li>
+                    </ul>
+                    <p><strong>Design principles to follow:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Clear and descriptive titles</li>
+                        <li>Appropriate axis labels and scales</li>
+                        <li>Consistent color schemes</li>
+                        <li>Avoid chart junk and unnecessary elements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3: File I/O and Data Formats -->
+        <div class="question-section">
+            <div class="question-number">QUESTION THREE</div>
+            <div class="marks">28 marks</div>
+            <h3 class="text-xl font-bold mb-4">File I/O and Data Formats</h3>
+            
+            <div class="mb-6">
+                <div class="bg-red-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - CSV Processing (12 marks)</h4>
+                    <p class="mb-3">Process data in CSV format with pandas:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Read student data from CSV file using pandas <code>read_csv()</code></li>
+                        <li>Handle different encodings and delimiters</li>
+                        <li>Perform data type inference and conversion</li>
+                        <li>Handle missing values and duplicate rows</li>
+                        <li>Write cleaned data back to CSV with specific formatting</li>
+                    </ul>
+                    <p><strong>Sample CSV structure:</strong></p>
+                    <div class="code-block">
+student_id,name,gpa,department,courses
+123456,Alice Johnson,3.8,Computer Science,5
+234567,Bob Smith,3.2,Mathematics,4
+345678,Charlie Brown,3.9,Physics,6
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - JSON and XML (8 marks)</h4>
+                    <p class="mb-3">Work with structured data formats:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Read and parse JSON data containing nested structures</li>
+                        <li>Convert between JSON and Python dictionaries</li>
+                        <li>Handle XML data using appropriate libraries</li>
+                        <li>Validate data against schemas or DTDs</li>
+                        <li>Export data to JSON format with proper formatting</li>
+                    </ul>
+                    <p><strong>Example JSON structure:</strong></p>
+                    <div class="code-block">
+{
+  "students": [
+    {
+      "id": 123456,
+      "name": "Alice Johnson",
+      "grades": {"COMP1005": 85, "MATH1010": 92},
+      "metadata": {"enrollment_year": 2023, "status": "active"}
+    }
+  ]
+}
+                    </div>
+                </div>
+
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Database Integration (8 marks)</h4>
+                    <p class="mb-3">Connect to and query databases:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Connect to SQLite database using sqlite3 module</li>
+                        <li>Create tables for student data with appropriate schema</li>
+                        <li>Perform CRUD operations (Create, Read, Update, Delete)</li>
+                        <li>Execute complex queries with joins and aggregations</li>
+                        <li>Export query results to pandas DataFrame</li>
+                    </ul>
+                    <p><strong>Database schema design:</strong></p>
+                    <div class="code-block">
+CREATE TABLE students (
+    student_id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    gpa REAL CHECK(gpa >= 0 AND gpa <= 4),
+    department TEXT,
+    enrollment_date DATE
+);
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4: Advanced Analytics -->
+        <div class="question-section">
+            <div class="question-number">QUESTION FOUR</div>
+            <div class="marks">30 marks</div>
+            <h3 class="text-xl font-bold mb-4">Advanced Analytics and Machine Learning</h3>
+            
+            <div class="mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (a) - Predictive Modeling (15 marks)</h4>
+                    <p class="mb-3">Build simple predictive models for student success:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Prepare features for prediction (GPA, course load, attendance, etc.)</li>
+                        <li>Implement linear regression to predict final grades</li>
+                        <li>Calculate model performance metrics (R², RMSE, MAE)</li>
+                        <li>Perform train-test split and cross-validation</li>
+                        <li>Create residual plots to analyze model performance</li>
+                    </ul>
+                    
+                    <p><strong>Feature engineering considerations:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Normalize or standardize numerical features</li>
+                        <li>Handle categorical variables with one-hot encoding</li>
+                        <li>Address multicollinearity between features</li>
+                        <li>Consider polynomial features for non-linear relationships</li>
+                    </ul>
+
+                    <p><strong>Model evaluation:</strong></p>
+                    <div class="code-block">
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score, mean_squared_error
+
+# Train model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Evaluate
+y_pred = model.predict(X_test)
+r2 = r2_score(y_test, y_pred)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+                    </div>
+                </div>
+
+                <div class="bg-cyan-50 p-4 rounded-lg mt-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Clustering and Segmentation (15 marks)</h4>
+                    <p class="mb-3">Perform student segmentation using clustering algorithms:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Implement K-means clustering to group students by performance patterns</li>
+                        <li>Use elbow method to determine optimal number of clusters</li>
+                        <li>Analyze cluster characteristics and create student profiles</li>
+                        <li>Visualize clusters using PCA or t-SNE dimensionality reduction</li>
+                        <li>Provide recommendations for each student segment</li>
+                    </ul>
+
+                    <p><strong>Cluster analysis workflow:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Standardize features before clustering</li>
+                        <li>Evaluate cluster quality using silhouette score</li>
+                        <li>Interpret cluster centers to understand student groups</li>
+                        <li>Create actionable insights for academic advisors</li>
+                    </ul>
+
+                    <p><strong>Example cluster profiles:</strong></p>
+                    <div class="code-block">
+Cluster 1 - High Achievers (25%):
+- Average GPA: 3.8
+- Course load: 5.2 courses/semester
+- Characteristics: Consistent performance, high engagement
+
+Cluster 2 - Balanced Students (45%):
+- Average GPA: 3.2
+- Course load: 4.5 courses/semester
+- Characteristics: Moderate performance, good time management
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-lg mt-8">
+            <h3 class="text-xl font-bold mb-4 text-center">END OF EXAMINATION PAPER</h3>
+            <p class="text-center text-gray-600">Please ensure all questions have been attempted. Use the back of pages for additional working space if needed.</p>
+        </div>
+    </div>
+</body>
+</html>

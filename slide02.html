@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Structures - Making Decisions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 1400px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .concept-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .concept-box {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 5px solid #f5576c;
+        }
+        .concept-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .concept-icon {
+            font-size: 1.8rem;
+            margin-right: 0.5rem;
+            color: #f5576c;
+        }
+        .code-example {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            border: 2px solid #f5576c;
+        }
+        .flow-diagram {
+            background: white;
+            border: 2px solid #f5576c;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .flow-box {
+            background: #f5576c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin: 0.5rem;
+            display: inline-block;
+            font-weight: 600;
+        }
+        .arrow {
+            font-size: 1.5rem;
+            color: #f5576c;
+            margin: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-card">
+            <div class="text-center mb-6">
+                <h1 class="hero-title">Control Structures</h1>
+                <p class="subtitle">Making Decisions in Your Code</p>
+            </div>
+            
+            <div class="concept-section">
+                <div class="concept-box">
+                    <div class="concept-title">
+                        <div class="concept-icon"><i class="fas fa-code-branch"></i></div>
+                        Conditional Statements
+                    </div>
+                    <div class="flow-diagram">
+                        <div class="flow-box">Condition</div>
+                        <div class="arrow">↓</div>
+                        <div class="flow-box">True → Action</div>
+                        <div class="arrow">↓</div>
+                        <div class="flow-box">False → Alternative</div>
+                    </div>
+                    <div class="code-example">
+<span style="color: #68d391;"># If-elif-else structure</span>
+gpa = float(input("Enter GPA: "))
+
+if gpa >= 3.7:
+    classification = "First Class"
+elif gpa >= 3.0:
+    classification = "Upper Second"
+elif gpa >= 2.0:
+    classification = "Lower Second"
+else:
+    classification = "Third Class"
+
+print(f"Your classification: {classification}")
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <div class="concept-title">
+                        <div class="concept-icon"><i class="fas fa-sync-alt"></i></div>
+                        Loops & Iteration
+                    </div>
+                    <div class="code-example">
+<span style="color: #68d391;"># While loop - unknown iterations</span>
+courses = []
+while True:
+    course = input("Enter course (or 'done'): ")
+    if course.lower() == 'done':
+        break
+    courses.append(course)
+
+<span style="color: #68d391;"># For loop - known iterations</span>
+for i in range(1, 6):
+    print(f"Count: {i}")
+
+<span style="color: #68d391;"># Nested loops</span>
+for row in range(3):
+    for col in range(3):
+        print(f"({row},{col})", end=" ")
+    print()
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-gradient-to-r from-pink-100 to-red-100 p-4 rounded-lg">
+                <div class="text-center">
+                    <p class="text-lg font-semibold text-gray-800">
+                        <i class="fas fa-brain mr-2 text-pink-600"></i>
+                        Control structures are the logic engine of your program - they determine what happens and when!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

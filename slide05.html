@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists - Ordered Collections</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 1400px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .list-concepts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .concept-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 5px solid #667eea;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .section-icon {
+            font-size: 1.8rem;
+            margin-right: 0.5rem;
+            color: #667eea;
+        }
+        .list-visual {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .list-item {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 0.2rem;
+        }
+        .index-label {
+            font-size: 0.8rem;
+            color: #4a5568;
+            text-align: center;
+            margin-top: 0.2rem;
+        }
+        .code-showcase {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            border: 2px solid #667eea;
+        }
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .method-card {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .method-name {
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.3rem;
+        }
+        .method-desc {
+            font-size: 0.8rem;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-card">
+            <div class="text-center mb-6">
+                <h1 class="hero-title">Lists</h1>
+                <p class="subtitle">Ordered Collections of Data</p>
+            </div>
+            
+            <div class="list-concepts">
+                <div class="concept-section">
+                    <div class="section-title">
+                        <div class="section-icon"><i class="fas fa-list-ol"></i></div>
+                        List Fundamentals
+                    </div>
+                    
+                    <div class="list-visual">
+                        <div>
+                            <div class="list-item">Python</div>
+                            <div class="index-label">Index 0</div>
+                        </div>
+                        <div>
+                            <div class="list-item">Java</div>
+                            <div class="index-label">Index 1</div>
+                        </div>
+                        <div>
+                            <div class="list-item">C++</div>
+                            <div class="index-label">Index 2</div>
+                        </div>
+                        <div>
+                            <div class="list-item">JavaScript</div>
+                            <div class="index-label">Index 3</div>
+                        </div>
+                    </div>
+
+                    <div class="code-showcase">
+<span style="color: #68d391;"># Creating and accessing lists</span>
+courses = ["Python", "Java", "C++", "JavaScript"]
+
+<span style="color: #68d391;"># Access by index (starts at 0)</span>
+first_course = courses[0]    <span style="color: #fbb6ce;"># "Python"</span>
+last_course = courses[-1]    <span style="color: #fbb6ce;"># "JavaScript"</span>
+
+<span style="color: #68d391;"># Modifying lists</span>
+courses.append("Ruby")       <span style="color: #fbb6ce;"># Add to end</span>
+courses.insert(1, "Go")      <span style="color: #fbb6ce;"># Insert at position</span>
+courses.remove("C++")        <span style="color: #fbb6ce;"># Remove by value</span>
+removed = courses.pop()      <span style="color: #fbb6ce;"># Remove and return last</span>
+                    </div>
+                </div>
+
+                <div class="concept-section">
+                    <div class="section-title">
+                        <div class="section-icon"><i class="fas fa-tools"></i></div>
+                        List Methods
+                    </div>
+                    
+                    <div class="methods-grid">
+                        <div class="method-card">
+                            <div class="method-name">append()</div>
+                            <div class="method-desc">Add item to end</div>
+                        </div>
+                        <div class="method-card">
+                            <div class="method-name">insert()</div>
+                            <div class="method-desc">Add at specific position</div>
+                        </div>
+                        <div class="method-card">
+                            <div class="method-name">remove()</div>
+                            <div class="method-desc">Remove by value</div>
+                        </div>
+                        <div class="method-card">
+                            <div class="method-name">pop()</div>
+                            <div class="method-desc">Remove and return</div>
+                        </div>
+                        <div class="method-card">
+                            <div class="method-name">sort()</div>
+                            <div class="method-desc">Sort in place</div>
+                        </div>
+                        <div class="method-card">
+                            <div class="method-name">reverse()</div>
+                            <div class="method-desc">Reverse order</div>
+                        </div>
+                    </div>
+
+                    <div class="code-showcase">
+<span style="color: #68d391;"># List operations and methods</span>
+numbers = [3, 1, 4, 1, 5, 9, 2, 6]
+
+<span style="color: #68d391;"># Sorting</span>
+numbers.sort()              <span style="color: #fbb6ce;"># [1, 1, 2, 3, 4, 5, 6, 9]</span>
+reversed_nums = numbers[::-1]  <span style="color: #fbb6ce;"># Reverse slice</span>
+
+<span style="color: #68d391;"># List comprehensions</span>
+squares = [x**2 for x in range(5)]  <span style="color: #fbb6ce;"># [0, 1, 4, 9, 16]</span>
+evens = [x for x in numbers if x % 2 == 0]  <span style="color: #fbb6ce;"># Filter even numbers</span>
+
+<span style="color: #68d391;"># Useful functions</span>
+length = len(numbers)       <span style="color: #fbb6ce;"># Count items</span>
+maximum = max(numbers)      <span style="color: #fbb6ce;"># Find maximum</span>
+sum_total = sum(numbers)    <span style="color: #fbb6ce;"># Sum all items</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-gradient-to-r from-purple-100 to-indigo-100 p-4 rounded-lg">
+                <div class="text-center">
+                    <p class="text-lg font-semibold text-gray-800">
+                        <i class="fas fa-lightbulb mr-2 text-purple-600"></i>
+                        Lists are like arrays - they store multiple items in a specific order and can be modified!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

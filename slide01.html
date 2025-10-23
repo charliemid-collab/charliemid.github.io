@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Fundamentals - Data Types & Variables</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 1200px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .concept-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .concept-icon {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        .concept-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        .concept-desc {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        .code-snippet {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .highlight {
+            background: #fed7d7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-card">
+            <div class="text-center mb-8">
+                <h1 class="hero-title">Data Types & Variables</h1>
+                <p class="subtitle">The Foundation of Programming</p>
+            </div>
+            
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="concept-title">Primitive Data Types</div>
+                    <div class="concept-desc">
+                        Basic building blocks of data storage
+                        <div class="code-snippet">
+<span style="color: #68d391;"># Numbers</span>
+age = 20                    <span style="color: #68d391;"># Integer</span>
+height = 5.9               <span style="color: #68d391;"># Float</span>
+
+<span style="color: #68d391;"># Text</span>
+name = "Alice"             <span style="color: #68d391;"># String</span>
+
+<span style="color: #68d391;"># Logic</span>
+is_student = True         <span style="color: #68d391;"># Boolean</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <div class="concept-title">Collection Types</div>
+                    <div class="concept-desc">
+                        Storing multiple values efficiently
+                        <div class="code-snippet">
+<span style="color: #68d391;"># Ordered collections</span>
+courses = ["COMP1005", "MATH1010", "PHYS1001"]
+student_info = ("John", "Doe", 2025)  <span style="color: #68d391;"># Tuple</span>
+
+<span style="color: #68d391;"># Key-value pairs</span>
+student = {
+    "name": "Sarah",
+    "id": 123456,
+    "gpa": 3.8
+}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="concept-title">Type Conversion</div>
+                    <div class="concept-desc">
+                        Converting between different data types
+                        <div class="code-snippet">
+<span style="color: #68d391;"># String to number</span>
+user_input = "85.5"
+grade = float(user_input)  <span style="color: #68d391;"># 85.5</span>
+
+<span style="color: #68d391;"># Number to string</span>
+age = 20
+age_str = str(age)         <span style="color: #68d391;"># "20"</span>
+
+<span style="color: #68d391;"># String operations</span>
+name = "Alice Johnson"
+first_name = name.split()[0]  <span style="color: #68d391;"># "Alice"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <div class="bg-blue-50 p-4 rounded-lg inline-block">
+                    <p class="text-blue-800 font-semibold">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Key Insight: Variables are containers that hold data. The data type determines what operations you can perform!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

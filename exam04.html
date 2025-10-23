@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP1005 Fundamentals of Programming - Exam 4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .exam-header {
+            background: linear-gradient(135deg, #38a169 0%, #2d3748 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .question-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #38a169;
+        }
+        .question-number {
+            background: #38a169;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #fed7d7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .marks {
+            background: #c6f6d5;
+            color: #22543d;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 600;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-header">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-2">COMP1005 Fundamentals of Programming</h1>
+            <p class="text-xl text-center opacity-90">Examination Paper 4 - Algorithms and Problem Solving</p>
+            <div class="flex justify-center mt-4">
+                <div class="bg-white bg-opacity-20 px-6 py-2 rounded-full">
+                    <span class="font-semibold">Total Marks: 120</span> | <span class="font-semibold">Duration: 2 Hours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6">
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-info-circle text-yellow-400 text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-yellow-700">
+                        <strong>Instructions:</strong> Attempt all questions. Write your answers on the exam paper. Use the back of pages if needed. This is a CLOSED BOOK examination.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 1: Searching Algorithms -->
+        <div class="question-section">
+            <div class="question-number">QUESTION ONE</div>
+            <div class="marks">30 marks</div>
+            <h3 class="text-xl font-bold mb-4">Searching and Sorting Algorithms</h3>
+            
+            <div class="mb-6">
+                <p class="mb-4">Implement fundamental searching and sorting algorithms for a student database system.</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Linear Search (10 marks)</h4>
+                    <p class="mb-3">Implement linear search to find students by name:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Function <code>linear_search(students, target_name)</code> that searches a list of student dictionaries</li>
+                        <li>Return the index of the first matching student or -1 if not found</li>
+                        <li>Include step-by-step tracing to show the search process</li>
+                        <li>Count and return the number of comparisons made</li>
+                        <li>Handle case-insensitive search</li>
+                    </ul>
+                    <p><strong>Sample student data structure:</strong></p>
+                    <div class="code-block">
+students = [
+    {"name": "Alice", "id": 123456, "gpa": 3.8},
+    {"name": "Bob", "id": 234567, "gpa": 3.2},
+    {"name": "Charlie", "id": 345678, "gpa": 3.9}
+]
+                    </div>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Binary Search (12 marks)</h4>
+                    <p class="mb-3">Implement binary search for sorted student data:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Function <code>binary_search(sorted_students, target_id)</code> that searches by student ID</li>
+                        <li>Assume the list is sorted by student ID</li>
+                        <li>Return the index of the matching student or -1 if not found</li>
+                        <li>Include step-by-step tracing of the binary search process</li>
+                        <li>Count and return the number of comparisons made</li>
+                        <li>Compare the efficiency with linear search</li>
+                    </ul>
+                    <p><strong>Explain why binary search is more efficient for sorted data:</strong></p>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Selection Sort (8 marks)</h4>
+                    <p class="mb-3">Implement selection sort to sort students by GPA:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Function <code>selection_sort_by_gpa(students)</code> that sorts in descending order</li>
+                        <li>Show the step-by-step sorting process</li>
+                        <li>Count the number of swaps performed</li>
+                        <li>Return the sorted list along with sorting statistics</li>
+                    </ul>
+                    <p><strong>Demonstrate with a sample list of 5 students</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2: Recursion -->
+        <div class="question-section">
+            <div class="question-number">QUESTION TWO</div>
+            <div class="marks">28 marks</div>
+            <h3 class="text-xl font-bold mb-4">Recursion and Divide-and-Conquer</h3>
+            
+            <div class="mb-6">
+                <div class="bg-orange-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Factorial and Fibonacci (10 marks)</h4>
+                    <p class="mb-3">Implement recursive mathematical functions:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Function <code>factorial(n)</code> to calculate n! using recursion</li>
+                        <li>Function <code>fibonacci(n)</code> to calculate the nth Fibonacci number</li>
+                        <li>Include base cases and recursive cases for both functions</li>
+                        <li>Add input validation to handle negative numbers</li>
+                        <li>Trace the recursive calls for factorial(5) and fibonacci(6)</li>
+                    </ul>
+                    <p><strong>Show the call stack for at least one example:</strong></p>
+                    <div class="code-block">
+factorial(5) = 5 × factorial(4)
+             = 5 × 4 × factorial(3)
+             = 5 × 4 × 3 × factorial(2)
+             = 5 × 4 × 3 × 2 × factorial(1)
+             = 5 × 4 × 3 × 2 × 1 = 120
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Recursive List Processing (10 marks)</h4>
+                    <p class="mb-3">Implement recursive functions for list processing:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Function <code>recursive_sum(numbers)</code> to sum a list recursively</li>
+                        <li>Function <code>recursive_max(numbers)</code> to find the maximum value recursively</li>
+                        <li>Function <code>recursive_reverse(lst)</code> to reverse a list recursively</li>
+                        <li>Function <code>recursive_search(lst, target)</code> to search for an element recursively</li>
+                    </ul>
+                    <p><strong>Each function should handle the empty list as base case</strong></p>
+                </div>
+
+                <div class="bg-teal-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Merge Sort (8 marks)</h4>
+                    <p class="mb-3">Implement merge sort using divide-and-conquer:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Function <code>merge_sort(arr)</code> that recursively divides and merges the array</li>
+                        <li>Helper function <code>merge(left, right)</code> to merge two sorted arrays</li>
+                        <li>Trace the sorting process for the list [64, 34, 25, 12, 22, 11, 90]</li>
+                        <li>Explain why merge sort has O(n log n) time complexity</li>
+                    </ul>
+                    <p><strong>Show the divide and conquer steps:</strong></p>
+                    <div class="code-block">
+[64, 34, 25, 12, 22, 11, 90]
+→ [64, 34, 25] + [12, 22, 11, 90]
+→ [64] + [34, 25] + [12, 22] + [11, 90]
+→ Merge: [25, 34, 64] + [11, 12, 22, 90]
+→ Final: [11, 12, 22, 25, 34, 64, 90]
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3: Data Structures -->
+        <div class="question-section">
+            <div class="question-number">QUESTION THREE</div>
+            <div class="marks">32 marks</div>
+            <h3 class="text-xl font-bold mb-4">Data Structures and Abstract Data Types</h3>
+            
+            <div class="mb-6">
+                <div class="bg-red-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Stack Implementation (12 marks)</h4>
+                    <p class="mb-3">Implement a Stack class using Python lists:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Methods: <code>push(item)</code>, <code>pop()</code>, <code>peek()</code>, <code>is_empty()</code>, <code>size()</code></li>
+                        <li>Handle underflow conditions (trying to pop from empty stack)</li>
+                        <li>Demonstrate stack usage with a simple expression evaluation</li>
+                        <li>Implement a function to check balanced parentheses using the stack</li>
+                    </ul>
+                    <p><strong>Test with expressions like: <code>((a+b)*(c-d))</code> and <code>((a+b)*(c-d</code></strong></p>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Queue Implementation (10 marks)</h4>
+                    <p class="mb-3">Implement a Queue class using Python lists:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Methods: <code>enqueue(item)</code>, <code>dequeue()</code>, <code>front()</code>, <code>is_empty()</code>, <code>size()</code></li>
+                        <li>Handle underflow conditions (trying to dequeue from empty queue)</li>
+                        <li>Demonstrate queue usage with a simple task scheduling system</li>
+                        <li>Implement a function to simulate a printer queue with jobs of different priorities</li>
+                    </ul>
+                    <p><strong>Simulate processing 5 print jobs with different priorities</strong></p>
+                </div>
+
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Linked List (10 marks)</h4>
+                    <p class="mb-3">Implement a simple singly linked list:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Node class with data and next pointer</li>
+                        <li>LinkedList class with head pointer</li>
+                        <li>Methods: <code>append(data)</code>, <code>insert_at_beginning(data)</code>, <code>delete(data)</code></li>
+                        <li>Method <code>search(data)</code> to find a node</li>
+                        <li>Method <code>display()</code> to print all elements</li>
+                    </ul>
+                    <p><strong>Create a linked list with student names and demonstrate all operations</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4: Problem Solving -->
+        <div class="question-section">
+            <div class="question-number">QUESTION FOUR</div>
+            <div class="marks">30 marks</div>
+            <h3 class="text-xl font-bold mb-4">Complex Problem Solving</h3>
+            
+            <div class="mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (a) - Student Management System (15 marks)</h4>
+                    <p class="mb-3">Create a comprehensive student management system:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Implement functions to add, remove, update, and search students</li>
+                        <li>Sort students by different criteria (name, GPA, ID)</li>
+                        <li>Generate reports: honor roll (GPA ≥ 3.5), academic probation (GPA < 2.0)</li>
+                        <li>Calculate class statistics (average GPA, grade distribution)</li>
+                        <li>Export student data to CSV format</li>
+                    </ul>
+                    
+                    <p><strong>Use appropriate data structures and algorithms for efficiency:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Use dictionaries for fast student lookup by ID</li>
+                        <li>Use lists for maintaining sorted order</li>
+                        <li>Implement binary search for efficient searching</li>
+                    </ul>
+                </div>
+
+                <div class="bg-cyan-50 p-4 rounded-lg mt-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Course Scheduling System (15 marks)</h4>
+                    <p class="mb-3">Design a course scheduling and conflict detection system:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Represent courses with attributes: code, name, instructor, schedule, capacity</li>
+                        <li>Implement conflict detection for overlapping schedules</li>
+                        <li>Manage student enrollments with waitlists when courses are full</li>
+                        <li>Generate student schedules and detect conflicts</li>
+                        <li>Optimize course assignments to minimize conflicts</li>
+                    </ul>
+
+                    <p><strong>Algorithm considerations:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Use graph algorithms to represent course dependencies</li>
+                        <li>Implement greedy algorithms for schedule optimization</li>
+                        <li>Use priority queues for waitlist management</li>
+                    </ul>
+
+                    <p><strong>Sample course data:</strong></p>
+                    <div class="code-block">
+courses = [
+    {"code": "COMP1005", "name": "Programming Fundamentals", "schedule": "MWF 9:00-9:50", "capacity": 30},
+    {"code": "MATH1010", "name": "Calculus I", "schedule": "MWF 10:00-10:50", "capacity": 35},
+    {"code": "PHYS1001", "name": "Physics I", "schedule": "TR 11:00-12:15", "capacity": 25}
+]
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-lg mt-8">
+            <h3 class="text-xl font-bold mb-4 text-center">END OF EXAMINATION PAPER</h3>
+            <p class="text-center text-gray-600">Please ensure all questions have been attempted. Use the back of pages for additional working space if needed.</p>
+        </div>
+    </div>
+</body>
+</html>

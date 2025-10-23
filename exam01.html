@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP1005 Fundamentals of Programming - Exam 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        .exam-header {
+            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .question-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #4a5568;
+        }
+        .question-number {
+            background: #4a5568;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #fed7d7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .marks {
+            background: #c6f6d5;
+            color: #22543d;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 600;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-header">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-2">COMP1005 Fundamentals of Programming</h1>
+            <p class="text-xl text-center opacity-90">Examination Paper 1 - Data Types and Control Structures</p>
+            <div class="flex justify-center mt-4">
+                <div class="bg-white bg-opacity-20 px-6 py-2 rounded-full">
+                    <span class="font-semibold">Total Marks: 120</span> | <span class="font-semibold">Duration: 2 Hours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6">
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-info-circle text-yellow-400 text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-yellow-700">
+                        <strong>Instructions:</strong> Attempt all questions. Write your answers on the exam paper. Use the back of pages if needed. This is a CLOSED BOOK examination.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 1: Data Types and Variables -->
+        <div class="question-section">
+            <div class="question-number">QUESTION ONE</div>
+            <div class="marks">36 marks</div>
+            <h3 class="text-xl font-bold mb-4">Data Types and Variable Management</h3>
+            
+            <div class="mb-6">
+                <p class="mb-4">A student management system needs to store information about course enrollments. The system should handle different data types for various student attributes.</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Variable Declaration (8 marks)</h4>
+                    <p class="mb-3">Create variables to store the following student information:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Student ID (integer)</li>
+                        <li>Student name (string)</li>
+                        <li>GPA (floating point)</li>
+                        <li>Is enrolled (boolean)</li>
+                        <li>Courses taken (list of strings)</li>
+                    </ul>
+                    <p><strong>Write the Python code to declare these variables with appropriate initial values:</strong></p>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Type Conversion (6 marks)</h4>
+                    <p class="mb-3">Given the following code that reads user input:</p>
+                    <div class="code-block">
+user_input = input("Enter your GPA: ")
+current_gpa = float(user_input)
+                    </div>
+                    <p class="mb-3">Write code to:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Convert the GPA to an integer</li>
+                        <li>Convert the integer GPA back to a string with 2 decimal places</li>
+                        <li>Print both converted values with appropriate labels</li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - String Operations (8 marks)</h4>
+                    <p class="mb-3">Given student name = "John Doe", write code to:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Extract the first name and last name into separate variables</li>
+                        <li>Create a username by combining first initial + last name in lowercase</li>
+                        <li>Create an email address using the format: username@university.edu</li>
+                        <li>Print all extracted and created values</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2: Control Structures -->
+        <div class="question-section">
+            <div class="question-number">QUESTION TWO</div>
+            <div class="marks">28 marks</div>
+            <h3 class="text-xl font-bold mb-4">Control Structures and Decision Making</h3>
+            
+            <div class="mb-6">
+                <div class="bg-orange-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Conditional Statements (10 marks)</h4>
+                    <p class="mb-3">Write a program that determines student grade classification based on GPA:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>GPA ≥ 3.7: "First Class Honors"</li>
+                        <li>3.0 ≤ GPA < 3.7: "Upper Second Class"</li>
+                        <li>2.0 ≤ GPA < 3.0: "Lower Second Class"</li>
+                        <li>1.0 ≤ GPA < 2.0: "Third Class"</li>
+                        <li>GPA < 1.0: "Fail"</li>
+                    </ul>
+                    <p class="mb-3">The program should:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Read GPA from user input</li>
+                        <li>Validate that GPA is between 0.0 and 4.0</li>
+                        <li>Print the appropriate classification</li>
+                        <li>Handle invalid input with an error message</li>
+                    </ul>
+                </div>
+
+                <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Loops and Iteration (10 marks)</h4>
+                    <p class="mb-3">Write a program to manage course enrollment:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Start with an empty list of courses</li>
+                        <li>Use a while loop to repeatedly ask for course codes</li>
+                        <li>Add each valid course code to the list</li>
+                        <li>Continue until user enters "DONE"</li>
+                        <li>Print the total number of courses enrolled</li>
+                        <li>Print all course codes using a for loop</li>
+                    </ul>
+                    <p><strong>Sample interaction:</strong></p>
+                    <div class="code-block">
+Enter course code (or DONE to finish): COMP1005
+Enter course code (or DONE to finish): COMP2005
+Enter course code (or DONE to finish): DONE
+You are enrolled in 2 courses:
+COMP1005
+COMP2005
+                    </div>
+                </div>
+
+                <div class="bg-teal-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Nested Loops (8 marks)</h4>
+                    <p class="mb-3">Create a multiplication table generator:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Ask user for the maximum number (1-12)</li>
+                        <li>Validate the input range</li>
+                        <li>Generate a formatted multiplication table</li>
+                        <li>Use nested loops to create the table</li>
+                    </ul>
+                    <p><strong>Expected output for input 3:</strong></p>
+                    <div class="code-block">
+    1   2   3
+1   1   2   3
+2   2   4   6
+3   3   6   9
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3: Functions -->
+        <div class="question-section">
+            <div class="question-number">QUESTION THREE</div>
+            <div class="marks">30 marks</div>
+            <h3 class="text-xl font-bold mb-4">Functions and Code Organization</h3>
+            
+            <div class="mb-6">
+                <div class="bg-red-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (a) - Function Creation (12 marks)</h4>
+                    <p class="mb-3">Create functions for student GPA calculations:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li><code>calculate_gpa(grades)</code> - Takes a list of letter grades, returns GPA</li>
+                        <li><code>letter_to_points(grade)</code> - Converts letter grade to grade points</li>
+                        <li><code>validate_grades(grades)</code> - Checks if all grades are valid (A-F)</li>
+                    </ul>
+                    <p><strong>Grade point conversion:</strong> A=4.0, B=3.0, C=2.0, D=1.0, F=0.0</p>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Function Parameters (10 marks)</h4>
+                    <p class="mb-3">Write a function <code>process_student_data(name, grades, courses)</code> that:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Takes student name, list of grades, and list of courses</li>
+                        <li>Validates that grades and courses lists have same length</li>
+                        <li>Calculates GPA using the function from part (a)</li>
+                        <li>Returns a dictionary with student information</li>
+                        <li>Handles invalid data with appropriate error messages</li>
+                    </ul>
+                </div>
+
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (c) - Function Testing (8 marks)</h4>
+                    <p class="mb-3">Write test code for your functions:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Create test data with valid student information</li>
+                        <li>Call each function with appropriate arguments</li>
+                        <li>Print the results in a formatted way</li>
+                        <li>Include at least one test case with invalid data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4: Error Handling -->
+        <div class="question-section">
+            <div class="question-number">QUESTION FOUR</div>
+            <div class="marks">26 marks</div>
+            <h3 class="text-xl font-bold mb-4">Error Handling and Input Validation</h3>
+            
+            <div class="mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Part (a) - Exception Handling (14 marks)</h4>
+                    <p class="mb-3">Create a robust student data entry system:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Wrap user input in try-except blocks</li>
+                        <li>Handle ValueError for invalid numeric input</li>
+                        <li>Handle TypeError for invalid operations</li>
+                        <li>Provide meaningful error messages</li>
+                        <li>Allow user to retry after errors</li>
+                        <li>Log all errors to a file for debugging</li>
+                    </ul>
+                    
+                    <p class="mb-3"><strong>Specific requirements:</strong></p>
+                    <div class="code-block">
+try:
+    # Your code here
+except ValueError as e:
+    print(f"Invalid input: {e}")
+except TypeError as e:
+    print(f"Type error: {e}")
+except Exception as e:
+    print(f"Unexpected error: {e}")
+                    </div>
+                </div>
+
+                <div class="bg-cyan-50 p-4 rounded-lg mt-4">
+                    <h4 class="font-semibold mb-2">Part (b) - Input Validation (12 marks)</h4>
+                    <p class="mb-3">Create validation functions for student data:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li><code>validate_student_id(id)</code> - Must be 6-8 digits</li>
+                        <li><code>validate_email(email)</code> - Must contain @ and .</li>
+                        <li><code>validate_gpa(gpa)</code> - Must be between 0.0 and 4.0</li>
+                        <li><code>validate_year(year)</code> - Must be reasonable enrollment year</li>
+                    </ul>
+                    <p class="mb-3">Each function should:</p>
+                    <ul class="list-disc list-inside space-y-1 mb-4">
+                        <li>Return True if valid, False if invalid</li>
+                        <li>Include appropriate validation logic</li>
+                        <li>Handle edge cases appropriately</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-lg mt-8">
+            <h3 class="text-xl font-bold mb-4 text-center">END OF EXAMINATION PAPER</h3>
+            <p class="text-center text-gray-600">Please ensure all questions have been attempted. Use the back of pages for additional working space if needed.</p>
+        </div>
+    </div>
+</body>
+</html>

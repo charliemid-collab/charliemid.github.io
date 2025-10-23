@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming - Classes and Objects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 1400px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .oop-concepts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .concept-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 5px solid #4facfe;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .section-icon {
+            font-size: 1.8rem;
+            margin-right: 0.5rem;
+            color: #4facfe;
+        }
+        .class-diagram {
+            background: white;
+            border: 2px solid #4facfe;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .class-box {
+            background: #4facfe;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem;
+            display: inline-block;
+        }
+        .attribute {
+            background: #e6fffa;
+            color: #234e52;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin: 0.2rem;
+            font-family: monospace;
+        }
+        .method {
+            background: #b2f5ea;
+            color: #234e52;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin: 0.2rem;
+            font-family: monospace;
+        }
+        .code-showcase {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            border: 2px solid #4facfe;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .pillar-card {
+            background: white;
+            border: 2px solid #4facfe;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .pillar-icon {
+            font-size: 2rem;
+            color: #4facfe;
+            margin-bottom: 0.5rem;
+        }
+        .pillar-name {
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.3rem;
+        }
+        .pillar-desc {
+            font-size: 0.8rem;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-card">
+            <div class="text-center mb-6">
+                <h1 class="hero-title">Object-Oriented Programming</h1>
+                <p class="subtitle">Classes and Objects</p>
+            </div>
+            
+            <div class="oop-concepts">
+                <div class="concept-section">
+                    <div class="section-title">
+                        <div class="section-icon"><i class="fas fa-cube"></i></div>
+                        Class Definition
+                    </div>
+                    
+                    <div class="class-diagram">
+                        <div class="class-box">Student Class</div>
+                        <div class="attribute">name: string</div>
+                        <div class="attribute">student_id: integer</div>
+                        <div class="attribute">gpa: float</div>
+                        <div class="method">__init__(name, id, gpa)</div>
+                        <div class="method">__str__()</div>
+                        <div class="method">add_course(course)</div>
+                        <div class="method">get_classification()</div>
+                    </div>
+
+                    <div class="code-showcase">
+<span style="color: #68d391;"># Class definition</span>
+class Student:
+    """Student class for university management"""
+    
+    <span style="color: #fbb6ce;">def __init__(self, name, student_id, gpa):</span>
+        <span style="color: #fbb6ce;">self.name = name</span>
+        <span style="color: #fbb6ce;">self.student_id = student_id</span>
+        <span style="color: #fbb6ce;">self.gpa = gpa</span>
+        <span style="color: #fbb6ce;">self.courses = []</span>
+    
+    <span style="color: #fbb6ce;">def __str__(self):</span>
+        <span style="color: #fbb6ce;">return f"{self.name} (ID: {self.student_id}, GPA: {self.gpa})"</span>
+    
+    <span style="color: #fbb6ce;">def add_course(self, course):</span>
+        <span style="color: #fbb6ce;">self.courses.append(course)</span>
+    
+    <span style="color: #fbb6ce;">def get_classification(self):</span>
+        <span style="color: #fbb6ce;">if self.gpa >= 3.7: return "First Class"</span>
+        <span style="color: #fbb6ce;">elif self.gpa >= 3.0: return "Upper Second"</span>
+        <span style="color: #fbb6ce;">else: return "Lower Second"</span>
+                    </div>
+                </div>
+
+                <div class="concept-section">
+                    <div class="section-title">
+                        <div class="section-icon"><i class="fas fa-sitemap"></i></div>
+                        OOP Pillars
+                    </div>
+                    
+                    <div class="pillars-grid">
+                        <div class="pillar-card">
+                            <div class="pillar-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="pillar-name">Encapsulation</div>
+                            <div class="pillar-desc">Hide internal details</div>
+                        </div>
+                        <div class="pillar-card">
+                            <div class="pillar-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="pillar-name">Inheritance</div>
+                            <div class="pillar-desc">Reuse parent class code</div>
+                        </div>
+                        <div class="pillar-card">
+                            <div class="pillar-icon"><i class="fas fa-shapes"></i></div>
+                            <div class="pillar-name">Polymorphism</div>
+                            <div class="pillar-desc">Same interface, different behaviors</div>
+                        </div>
+                        <div class="pillar-card">
+                            <div class="pillar-icon"><i class="fas fa-puzzle-piece"></i></div>
+                            <div class="pillar-name">Abstraction</div>
+                            <div class="pillar-desc">Focus on essential features</div>
+                        </div>
+                    </div>
+
+                    <div class="code-showcase">
+<span style="color: #68d391;"># Creating and using objects</span>
+<span style="color: #68d391;"># Create instances (objects)</span>
+student1 = Student("Alice Johnson", 123456, 3.8)
+student2 = Student("Bob Smith", 234567, 3.2)
+
+<span style="color: #68d391;"># Use object methods</span>
+student1.add_course("COMP1005")
+student1.add_course("MATH1010")
+
+<span style="color: #68d391;">print(student1)</span>  <span style="color: #fbb6ce;"># Alice Johnson (ID: 123456, GPA: 3.8)</span>
+<span style="color: #68d391;">print(f"Classification: {student1.get_classification()}")</span>
+
+<span style="color: #68d391;"># Store objects in collections</span>
+students = [student1, student2]
+for student in students:
+    <span style="color: #fbb6ce;">print(f"{student.name}: {student.gpa}")</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-gradient-to-r from-blue-100 to-cyan-100 p-4 rounded-lg">
+                <div class="text-center">
+                    <p class="text-lg font-semibold text-gray-800">
+                        <i class="fas fa-lightbulb mr-2 text-blue-600"></i>
+                        Classes are blueprints, objects are the actual instances - like a house blueprint vs. the actual house!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>
